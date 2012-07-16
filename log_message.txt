@@ -1,0 +1,116 @@
+
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] [CARDHU] Exception Caught 
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Transfer in 103 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Warning: no output of icpuload
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Warning: no output of icpuload
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Transfer in 99 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Transfer in 104 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] Transfer in 14 second
+[CL472682 Band4 Test:FTP_UL_AM_RB45_TBSIDX18_2_FILES] Transfer in 16 second
+[CL472682 Band4 Test:FTP_UL_AM_RB40_TBSIDX16_2_FILES] Transfer in 19 second
+[CL472682 Band4 Test:FTP_UL_UM_RB45_TBSIDX18_2_FILES] Transfer in 14 second
+[CL472682 Band4 Test:FTP_COMB_DLUL_2_FILES_UL] Transfer in 42 second
+[CL472682 Band4 Test:FTP_DL_MIMO_AM_RB39_TBS25] Transfer in 11 second
+[CL472682 Band4 Test:FTP_DL_MIMO_AM_RB42_TBS24] Transfer in 13 second
+[CL472682 Band4 Test:FTP_UL_AM_RB45_TBSIDX18_2_FILES] Transfer in 15 second
+[CL472682 Band4 Test:FTP_UL_AM_RB40_TBSIDX16_2_FILES] Transfer in 19 second
+[CL472682 Band4 Test:FTP_UL_UM_RB45_TBSIDX18_2_FILES] Transfer in 14 second
+[CL472682 Band4 Test:FTP_COMB_DLUL_2_FILES_UL] Transfer in 42 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Transfer in 22 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Transfer in 22 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Transfer in 17 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Warning: no output of icpuload
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Transfer in 23 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Transfer in 20 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Transfer in 23 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Transfer in 22 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Transfer in 13 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] [CARDHU] Exception Caught 
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Warning: no output of icpuload
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Transfer in 12 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Transfer in 18 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Warning: no output of icpuload
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Transfer in 24 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Warning: no output of icpuload
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] [CARDHU] Exception Caught 
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Transfer in 12 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] Warning: no output of icpuload
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] Transfer in 24 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] [CARDHU] Exception Caught 
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] What is the issue??? -> Break
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] Transfer in 24 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] [CARDHU] Exception Caught 
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] What is the issue??? -> Break
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] Transfer in 25 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Can not remove extremities of rates and dxp loads values for more accuracy
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Warning: Can not compute Dxp1 CPU Load
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Warning: Can not compute Dxp0 CPU Load
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Warning: Can not compute DL CPU rate
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Transfer in 0 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Warning: Restart transfer to get new cpuload info
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Can not remove extremities of rates and dxp loads values for more accuracy
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Warning: Can not compute Dxp1 CPU Load
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Warning: Can not compute Dxp0 CPU Load
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Warning: Can not compute DL CPU rate
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Transfer in 0 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Transfer in 22 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] What is the issue??? -> Break
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Transfer in 16 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Transfer in 9 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] Transfer in 14 second
+[CL472682 Band4 Test:FTP_DL_MIMO_AM_RB39_TBS25] What is the issue??? -> Break
+[CL472682 Band4 Test:FTP_DL_MIMO_AM_RB39_TBS25] Transfer in 12 second
+[CL472682 Band4 Test:FTP_DL_MIMO_AM_RB42_TBS24] What is the issue??? -> Break
+[CL472682 Band4 Test:FTP_DL_MIMO_AM_RB42_TBS24] Transfer in 14 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] Transfer in 17 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] Transfer in 16 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] What is the issue??? -> Break
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] Transfer in 18 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] What is the issue??? -> Break
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] Transfer in 23 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] What is the issue??? -> Break
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] Transfer in 20 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] Can not remove extremities of rates and dxp loads values for more accuracy
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] Warning: Can not compute Dxp1 CPU Load
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] Warning: Can not compute Dxp0 CPU Load
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] Warning: Can not compute DL CPU rate
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] Transfer in 0 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] Warning: Restart transfer to get new cpuload info
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] Can not remove extremities of rates and dxp loads values for more accuracy
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] Warning: Can not compute Dxp1 CPU Load
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] Warning: Can not compute Dxp0 CPU Load
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] Warning: Can not compute DL CPU rate
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] Transfer in 0 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] What is the issue??? -> Break
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] Transfer in 20 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] What is the issue??? -> Break
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Transfer in 12 second
+[CL472682 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] Transfer in 14 second
+[CL472682 Band4 Test:FTP_UL_AM_RB45_TBSIDX18_2_FILES] Transfer in 15 second
+[CL472682 Band4 Test:FTP_UL_AM_RB45_TBSIDX18_2_FILES] Can not remove extremities of rates and dxp loads values for more accuracy
+[CL472682 Band4 Test:FTP_UL_AM_RB45_TBSIDX18_2_FILES] Warning: Can not compute Dxp1 CPU Load
+[CL472682 Band4 Test:FTP_UL_AM_RB45_TBSIDX18_2_FILES] Warning: Can not compute Dxp0 CPU Load
+[CL472682 Band4 Test:FTP_UL_AM_RB45_TBSIDX18_2_FILES] Warning: Can not compute UL CPU rate
+[CL472682 Band4 Test:FTP_UL_AM_RB45_TBSIDX18_2_FILES] Transfer in 0 second
+[CL472682 Band4 Test:FTP_UL_AM_RB45_TBSIDX18_2_FILES] Warning: Restart transfer to get new cpuload info
+[CL472682 Band4 Test:FTP_UL_AM_RB45_TBSIDX18_2_FILES] Transfer in 13 second
+[CL472682 Band4 Test:FTP_UL_AM_RB45_TBSIDX18_2_FILES] Transfer in 15 second
+[CL472682 Band4 Test:FTP_UL_AM_RB40_TBSIDX16_2_FILES] Transfer in 19 second
+[CL472682 Band4 Test:FTP_UL_UM_RB45_TBSIDX18_2_FILES] Transfer in 14 second
+[CL472682 Band4 Test:FTP_COMB_DLUL_2_FILES_UL] Transfer in 49 second
+[CL472682 Band4 Test:FTP_DL_MIMO_AM_RB39_TBS25] What is the issue??? -> Break
+[CL472682 Band4 Test:FTP_DL_MIMO_AM_RB39_TBS25] Transfer in 18 second
+[CL472682 Band4 Test:FTP_DL_MIMO_AM_RB42_TBS24] What is the issue??? -> Break
+[CL472682 Band4 Test:FTP_DL_MIMO_AM_RB42_TBS24] Transfer in 17 second
+[CL473808 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Can not remove extremities of rates and dxp loads values for more accuracy
+[CL473808 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Warning: Can not compute Dxp1 CPU Load
+[CL473808 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Warning: Can not compute Dxp0 CPU Load
+[CL473808 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Warning: Can not compute DL CPU rate
+[CL473808 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Transfer in 0 second
+[CL473808 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Warning: Restart transfer to get new cpuload info
+[CL473808 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] What is the issue??? -> Break
+[CL473808 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Warning: Can not compute DL CPU rate
+[CL473808 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Transfer in 3 second
+[CL473693 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Warning: no output of icpuload
+[CL473693 Band4 Test:FTP_DL_SISO_AM_RB50_TBS25] Transfer in 24 second
+[CL473693 Band4 Test:FTP_DL_SISO_AM_RB50_TBS26] Transfer in 18 second

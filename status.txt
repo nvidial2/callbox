@@ -1,0 +1,5 @@
+[CL473693 Branch:main Band:4 Test:FTP_DL_SISO_AM_RB50_TBS25 Status:Testing] 
+[CL473693 Branch:main Band:4 Test:FTP_DL_SISO_AM_RB50_TBS25 Status:Ok] 
+[CL473693 Branch:main Band:4 Test:FTP_DL_SISO_AM_RB50_TBS26 Status:Testing] 
+[CL473693 Branch:main Band:4 Test:FTP_DL_SISO_AM_RB50_TBS26 Status:Ok] 
+[CL473693 Branch:main Band:4 Test:FTP_UL_AM_RB45_TBSIDX18_2_FILES Status:Testing] 
