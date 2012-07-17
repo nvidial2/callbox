@@ -33,7 +33,11 @@ class device_management():
         for list in p.stdout:
             list_icera = re.search("AT Device", list)
             if list_icera != None:
-                self.at_port = re.search('COM(\d+)',list).group(1)
+                try:
+                    self.at_port = re.search('COM(\d+)',list).group(1)
+                except:
+                    self.at_port = 8
+               
                 #print "FOUND AT PORT : COM", self.at_port
                 break
 
@@ -80,11 +84,12 @@ class device_management():
 
     def sys_status(self,power_cycle=True):
         # return either OK , DOWNLOAD ONLY , ERROR
+        time.sleep(2)
         if (self.get_at_port() != 0) and (self.get_modem_status() == True):
             return SYS_STATUS[0] #OK
         if power_cycle == True :
             self.power_cycle()
-
+        time.sleep(2)
         if (self.get_at_port() != 0) and (self.get_modem_status() == True):
             return SYS_STATUS[0] #OK
         elif (self.get_at_port() == 0) and (self.get_modem_status() == True):

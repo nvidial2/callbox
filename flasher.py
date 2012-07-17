@@ -283,6 +283,7 @@ class Flash:
 ##            max_wait = max_wait - 1
 ##        return
 
+
     def flash_modem(self,cl,branch):
         self.init()
         self.cl = cl

@@ -12,7 +12,6 @@ from KThread import *
 from wx.lib.scrolledpanel import ScrolledPanel
 import common
 from FindRegression import *
-from cardhu import *
 
 filename = r"C:\logs\nic-diag.log"
 
@@ -66,17 +65,26 @@ class MyForm(wx.Frame):
         self.Bind(wx.EVT_RADIOBUTTON, self.TestType, id=self.rbAuto.GetId())
         self.rbUnit = wx.RadioButton(self.pl, -1, 'Unit Test')
         self.Bind(wx.EVT_RADIOBUTTON, self.TestType, id=self.rbUnit.GetId())
-        self.rbCardhu = wx.RadioButton(self.pl, -1, 'Cardhu')
-        self.Bind(wx.EVT_RADIOBUTTON, self.TestType, id=self.rbCardhu.GetId())
-
 
        # bsTestType.Add(self.stTestType,0, wx.ALL,10)
         bsTestType.Add(self.rbAuto,0, wx.ALL,10)
         bsTestType.Add(self.rbUnit,0, wx.ALL,10)
-        bsTestType.Add(self.rbCardhu,0, wx.ALL,10)
         bsTestType.Add(self.rbNotest,0, wx.ALL,10)
         sbsTestType.Add(bsTestType, 0, wx.LEFT,10)
 
+        #platform
+        #sbPlatformType = wx.StaticBox(self.pl, -1, 'Platform', size=(-1, -1))
+        #sbsPlatformType = wx.StaticBoxSizer(sbPlatformType, wx.HORIZONTAL)
+        #bsPlatformType = wx.BoxSizer ( wx.HORIZONTAL )
+        self.rbplatform = wx.RadioBox(self.pl, -1, "Platform", choices=["Win XP", "WoA"], majorDimension=0, style=wx.RA_SPECIFY_COLS)
+
+        #self.rbWinxp = wx.RadioButton(self.pl, -1, 'Win XP')
+        #self.Bind(wx.EVT_RADIOBUTTON, self.PlatformType, id=self.rbWinxp.GetId())
+        #self.rbWoA = wx.RadioButton(self.pl, -1, 'WoA')
+        #self.Bind(wx.EVT_RADIOBUTTON, self.PlatformType, id=self.rbWoA.GetId())
+        #bsPlatformType.Add(self.rbWinxp,0, wx.ALL,10)
+        #bsPlatformType.Add(self.rbplatform,0, wx.ALL,10)
+        #sbsPlatformType.Add(bsPlatformType, 0, wx.LEFT,10)
         # BranchSelection Part
         sbBranchSelection = wx.StaticBox(self.pl, -1, 'BranchSelection', size=(-1, -1))
         #sbBranchSelection.SetForegroundColour(wx.BLUE)
@@ -248,7 +256,8 @@ class MyForm(wx.Frame):
         bsTTBS.Add(sbsBranchSelection, 0, wx.EXPAND)
         bsTTBS.Add(sbsBandSelection, 0, wx.EXPAND)
         bsTTBS.Add(sbsAdditionOption, 0, wx.EXPAND)
-
+        #bsTTBS.Add(sbsPlatformType, 0, wx.EXPAND)
+        bsTTBS.Add(self.rbplatform, 0, wx.EXPAND)
 
         #StartSection and Flash Joining
         bsSSFS = wx.BoxSizer ( wx.HORIZONTAL)
@@ -699,6 +708,14 @@ class MyForm(wx.Frame):
             common.VID = str(self.vid_no.GetValue())
             print "VID number to use",common.VID
 
+        try:
+            if self.rbplatform.GetSelection() == 0:
+                common.CARDHU = False
+            if self.rbplatform.GetSelection() == 1:
+                common.CARDHU = True
+                common.MODEM_PORT = common.CARDHU_MODEM_TCP
+        except:
+            common.CARDHU = False
 
     def Refresh_Progress(self):
         self.sizer.Layout()
@@ -909,11 +926,15 @@ class MyForm(wx.Frame):
             self.testchoice = 0;
         elif (self.rbUnit.GetValue()):
             self.testchoice = 1
-        elif (self.rbCardhu.GetValue()) :
-            self.testchoice = 2
         else:
-            self.testchoice = 3
+            self.testchoice = 2
 
+    def PlatformType(self, event):
+        if (self.rbWinxp.GetValue()):
+            self.platformchoice = 0;
+        elif (self.rbWoA.GetValue()):
+            self.platformchoice = 1
+            
     def Start_Test(self):
         iCT = CallboxTest()
         iCT.Init_Auto(self.branch_4test,self.band_4test,self.scenario_4test)
@@ -934,13 +955,6 @@ class MyForm(wx.Frame):
                 print "Run Test Finished"
 
         elif self.testchoice == 2:
-            print "Cardhu Test"
-            common.CARDHU = True
-            common.MODEM_PORT = common.CARDHU_MODEM_TCP
-            iCT.Init_Auto(self.branch_4test,self.band_4test,self.scenario_4test)
-            iCT.Run_Branch_Test(Forced=self.force.IsChecked(),flash=False,Reg=self.cReg.IsChecked(),CL=self.cl)
-
-        elif self.testchoice == 3:
            print "No Test"
 
 

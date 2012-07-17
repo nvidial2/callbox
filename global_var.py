@@ -5,8 +5,8 @@ BAND_TANGO_ALLOWED = [4,17]
 BRANCH_ALLOWED = ['main','cr3','ST']
 #wlinux = "/home/gcflab/workspace/callbox-test/"
 wlinux = "/eng/nsait/workspace/nsait-main/"
-#wwin = os.path.join("serv2.icerasemi.com", "home", "gcflab","workspace","callbox-test")
-wwin = os.path.join("serv2.icerasemi.com", "eng", "nsait","workspace","nsait-main")
+#wwin = os.path.join("serv2", "home", "gcflab","workspace","callbox-test")
+wwin = os.path.join("serv2", "eng", "nsait","workspace","nsait-main")
 variant ="tango-internal"
 build_dir = []
 p4path = []
@@ -17,19 +17,21 @@ for branch in BRANCH_ALLOWED:
     build_dir.append(wlinux+"software/%s.br/product/datacard/modem/build/"%branch)
     MODEM_BINARY_LOC.append(r"\\%s\software\%s.br\product\datacard\modem\build\dxp-%s-obj\EV4\\"%(wwin,branch,variant))
     EXCEL_FLIST.append('Results_%s.xls'%branch)
+    #EXCEL_FLIST.append(r'\\serv2\eng\nsait\workspace\Results_%s.xls'%branch)
+
 
 P4BRANCH = []
 P4BRANCH.append("//software/main.br/")
 P4BRANCH.append("//software/releases/core/cr3.br/")
 
-COREDUMP_LOC = os.path.join("serv2.icerasemi.com", "eng", "nsait","workspace","nsait-main","software","main.br","tools","coredump")
+COREDUMP_LOC = os.path.join("serv2", "eng", "nsait","workspace","nsait-main","software","main.br","tools","coredump")
 #CHART_LOC = os.path.join("serv2.icerasemi.com", "home", "gcflab","workspace","callbox-test","chart")
 #CHART_LOC ='\\\\serv2.icerasemi.com\home\gcflab\workspace\callbox-test\chart\\'
 
 auto_callbox_loc = r"C:\Users\nsait\Desktop\auto_gui"
 SYS_STATUS = ['OK','DOWNLOAD_ONLY','ERROR']
-BINARY_LIB = "\\\\serv2.icerasemi.com\\eng\\nsait\\workspace\\binary_lib\\"
-RESULT_LOC = "\\\\serv2.icerasemi.com\\home\\gcflab\\workspace\\"
+BINARY_LIB = "\\\\serv2\\eng\\nsait\\workspace\\binary_lib\\"
+RESULT_LOC = "\\\\serv2\\home\\gcflab\\workspace\\"
 
 #################################################################################################
 # Globals
@@ -107,7 +109,7 @@ scenario_implemented = [
      "FTP_UL_UM_RB45_TBSIDX18_2_FILES",
      # "FTP_COMB_DLUL_1_FILE_UL",
      "FTP_COMB_DLUL_2_FILES_UL",
-	 "FTP_DL_MIMO_AM_RB39_TBS25",
+    "FTP_DL_MIMO_AM_RB39_TBS25",
       "FTP_DL_MIMO_AM_RB42_TBS24",
     #"FTP_DL_MIMO_AM_FIND_MAX_DEFAULT"
     ]

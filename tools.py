@@ -69,15 +69,18 @@ class Tools:
             msg = r"BUILD FAILURE FOR CL %s BRANCH %s VARIANT %s\n"%(cl,branch,variant)
             self.sendMail(msg)
             file_name = "BUILD_FAILURE_BRANCH_%s_CL_%s"%(branch,str(cl))
-            FILE = open('regression\\'+file_name,'a')
-            FILE.write(result)
-            FILE.close()
-            for line in result :
-                msg += r'%s'%line
-                FILE.write(line)
-            print msg
-            #p = subprocess.Popen("echo %s > build_failure_mail"%msg, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
-            self.sendMail(msg)
+            try:
+                FILE = open('regression\\'+file_name,'a')
+                for line in result :
+                    msg += r'%s'%line
+                    FILE.write(line)
+                #print msg
+                FILE.close()
+                #p = subprocess.Popen("echo %s > build_failure_mail"%msg, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+                self.sendMail(msg)
+            except:
+                pass
+                
             return BUILD_FAILED
 
     def ssh_client(self,cmd):
@@ -88,9 +91,10 @@ class Tools:
 
     def get_CL_list(self,br,p4br,startCl,endCl):
         cl_list = []
-        cmd = "cd %s;p4 changes %s@%s,@%s" % (br,p4br, startCl, endCl)
+        cmd = "cd %s;p4 changes %s...@%s,@%s" % (br,p4br, startCl, endCl)
+        print "[get_CL_list]",cmd
         result = self.ssh_client(cmd)
-
+        print result
         for line in result:
             #print line
             try:
@@ -115,7 +119,14 @@ class Tools:
             if(len(cl_list)) == 2 :
                 print "Final OK ",cl_list[1]
                 print "Final KO",cl_list[0]
-                self.sendMail(r"BUILD FAILURE BRANCH %s KO_CL %s OK_CL%s"%(branch,cl_list[0],cl_list[1]))
+                try:
+                    self.sendMail(r"BUILD FAILURE BRANCH %s KO_CL %s OK_CL%s"%(branch,cl_list[0],cl_list[1]))
+                    file_name = "BUILD_FAILURE_BRANCH_%s_KO_CL_%s_OK_CL%s"%(branch,cl_list[0],cl_list[1])
+                    FILE = open('regression\\'+file_name,'a')
+                    FILE.write(file_name)
+                    FILE.close()
+                except:
+                    pass
                 return cl_list[0],cl_list[1]
 
             if(len(cl_list)) == 0 :
@@ -196,5 +207,4 @@ def main():
 
 if __name__ == '__main__':
     #main()
-    Tools()._build('cr3')
-
+    print Tools().get_CL_list(build_dir[0],P4BRANCH[0],472914,472920)#_build('cr3')

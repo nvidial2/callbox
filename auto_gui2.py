@@ -523,7 +523,7 @@ class CallboxTest():
         self.clock = 0
         if re.search("FTP_DL_SISO_AM_RB50_TBS25_", scen_name):
             self.tm = 1 # self.tm = 2
-            self.dl_rb     = 30
+            self.dl_rb     = 50
             self.dl_tbsidx = 25
             self.ul_rb     = 3
             self.ul_tbsidx = 15
@@ -1281,7 +1281,6 @@ class CallboxTest():
             self.modif_dl_throughput(dl_rb,dl_tbsidx, "DL2")
 
     def set_throughput(self):
-        return True
         self.modif_dl_throughput(self.dl_rb,self.dl_tbsidx)
         self.modif_ul_throughput(self.ul_rb,self.ul_tbsidx)
         if self.tm > 1:
@@ -1524,7 +1523,6 @@ class CallboxTest():
         if self.dl:
             try:
                 self.cpu_dl_rate = [round(float(min(dl_rate_list))/1024,NB_PRECISION), round(float(sum(dl_rate_list)/len(dl_rate_list))/1024,NB_PRECISION), round(float(max(dl_rate_list))/1024,NB_PRECISION)]
-                print "dl_rate[1]",self.cpu_dl_rate[1]
             except:
                 self.log_msg("Warning: Can not compute DL CPU rate")
                 pass
@@ -1676,6 +1674,11 @@ class CallboxTest():
             ### Start Callbox ###
             try:
                 # Get the communication with the Callbox
+                try:
+                    self.get_ue_port()
+                    self.at.sendhidden('at+cfun=0')
+                except:
+                    print "Coudln't set at+cfun=0 before callbox_comm"
                 self.callbox_comm()
                 # Reset the Callbox
                 self.callbox_reset()
@@ -1821,7 +1824,7 @@ class CallboxTest():
             self.compute_throughput()
         # Update excel file
         self.excel()
-        os.system("copy "+ EXCEL_FILE + " \\\\serv2.icerasemi.com\\eng\\nsait\\") # get test results after each scenario
+        os.system("copy "+ EXCEL_FILE + " \\\\serv2\\eng\\nsait\\") # get test results after each scenario
 
     def config_allowed_for_cat2(self, rb, tbsidx):
         if tbsidx > 25 or rb > 50:
@@ -2085,25 +2088,17 @@ class CallboxTest():
 
         # 3) - Write CPU load and Rate results
         if self.test_cpuload:
-            print "[excel] test_cpuload"
             current = self.current_col
 
             try:
-                print "writing dl throughput",self.cpu_dl_rate[1]
                 # Write all result values
                 self.write_value_in_row_and_check(write_row, self.cpu_dxp1, cell_style, CHECK_HIGH) # For full check use: CHECK_HIGH)
                 self.write_value_in_row_and_check(write_row, self.cpu_dxp0, cell_style, CHECK_HIGH) # For full check use: CHECK_HIGH)
-                print "writing dl throughput before",self.cpu_dl_rate[1]
                 if self.dl:
-                    print "[excel] downlink"
-                    #print "throughput_DL=", self.throughput_DL, " cpu_dl_rate_ave=", self.cpu_dl_rate[1]
-                    print "writing dl throughput",self.cpu_dl_rate[1]
                     self.write_value_in_row_and_check(write_row, self.cpu_dl_rate[0], cell_style, NO_CHECK) # For full check use: CHECK_LOW)
                     self.write_value_in_row_and_check(write_row, self.cpu_dl_rate[1], cell_style, CHECK_LOW) # For full check use: CHECK_LOW)
                     self.write_value_in_row_and_check(write_row, self.cpu_dl_rate[2], cell_style, NO_CHECK) # For full check use: CHECK_LOW)
                 if self.ul:
-                    print "[excel] uplink"
-                    #print "throughput_UL=", self.throughput_UL_total, " cpu_ul_rate_ave=", self.cpu_ul_rate[1]
                     self.write_value_in_row_and_check(write_row, self.cpu_ul_rate[0], cell_style, NO_CHECK) # For full check use: CHECK_LOW)
                     self.write_value_in_row_and_check(write_row, self.cpu_ul_rate[1], cell_style, CHECK_LOW) # For full check use: CHECK_LOW)
                     self.write_value_in_row_and_check(write_row, self.cpu_ul_rate[2], cell_style, NO_CHECK) # For full check use: CHECK_LOW)
@@ -2115,10 +2110,11 @@ class CallboxTest():
         if self.dl:
             current = self.current_col
             try:
-                print "self.throughput_DL",self.throughput_DL
                 self.write_value_in_row_and_check(write_row, self.size_DL, cell_style, NO_CHECK) #CHECK_SAME
-                print
-                self.write_value_in_row_and_check(write_row, self.throughput_DL, cell_style, NO_CHECK)
+                try:
+                    self.write_value_in_row_and_check(write_row, self.throughput_DL, cell_style, CHECK_LOW)
+                except:
+                    self.write_value_in_row_and_check(write_row, self.throughput_DL, cell_style, NO_CHECK)		
             except:
                 self.current_col = current + 2
 
@@ -2129,7 +2125,10 @@ class CallboxTest():
                     self.write_value_in_row_and_check(write_row, self.counter_sec, cell_style, CHECK_LOW) # For full check use: CHECK_LOW)
                 else:
                     self.write_value_in_row_and_check(write_row, self.size_UL_total, cell_style, NO_CHECK)#CHECK_SAME
-                self.write_value_in_row_and_check(write_row, self.throughput_UL_total, cell_style, NO_CHECK) #CHECK_LOW
+                try:
+                    self.write_value_in_row_and_check(write_row, self.throughput_UL_total, cell_style, CHECK_LOW) #CHECK_LOW
+                except:
+                    self.write_value_in_row_and_check(write_row, self.throughput_UL_total, cell_style, NO_CHECK) #CHECK_LOW
             except:
                 self.current_col = current + 2
         #########################################################
@@ -2203,8 +2202,11 @@ class CallboxTest():
 
     def write_value_in_row_and_check(self, write_row, value, style, comparator=NO_CHECK):
         if self.ref_line and comparator != NO_CHECK and not self.status in [STATUS_ASSERT,STATUS_CRASH]:
-            self.check_regression_value(value, comparator)
-        print "writing ,",value,self.current_col
+            try:
+                self.check_regression_value(value, comparator)
+            except:
+                print "check_regression_value Exception"
+                style = status_OK_style
         write_row.write(self.current_col, value, style)
         self.current_col += 1
 
@@ -2551,7 +2553,7 @@ class CallboxTest():
                     self.print_with_time("BUILD START...")
                     self.notify_autoit(file_build_command)
                     status = "BUILDING"
-				# Reset timer
+                # Reset timer
                 timer = time.time()
                 self.print_with_time(("Restart timer -> Next build in %d sec..." % SCHEDULE_BUILD_TIME))
             # Check that the build or test is ready
@@ -2584,7 +2586,7 @@ class CallboxTest():
                 self.get_scenario_and_campaign_from_build()
                 os.system("copy "+ EXCEL_FILE + " \\\\"+ callbox_path + "\\")
                 # Save copy in home/renaud/Callbox_LTE_Test_main.br folder
-                os.system("copy "+ EXCEL_FILE + " \\\\serv2.icerasemi.com\\home\\renaud\\Callbox_LTE_Test_main.br\\")
+                os.system("copy "+ EXCEL_FILE + " \\\\serv2\\home\\renaud\\Callbox_LTE_Test_main.br\\")
                 if os.path.exists(file_test_result):
                     os.remove(file_test_result)
                 print "rename %s to %s" % (file_bld_ready, file_test_result)
